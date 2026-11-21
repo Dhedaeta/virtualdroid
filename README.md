@@ -2,7 +2,7 @@
 
 Repo: https://github.com/Dhedaeta/virtualdroid
 
-CI: template ada di `docs/ci/` (butuh izin Workflows untuk dipasang).
+CI: template `docs/ci/build-client-manual.yml` (build all-in-one). Workflow lama gagal di setup-android; gunakan yang manual.
 
 HP Android 16 **asli** yang berjalan di server, tampil penuh di HP Anda.
 Bukan guest Activity, bukan UI palsu: container Android 16 (redroid) + stream

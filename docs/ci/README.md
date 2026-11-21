@@ -1,13 +1,13 @@
 # GitHub Actions
 
-Workflow ini belum ada di `.github/workflows/` karena GitHub App yang
-digunakan untuk push tidak punya izin `workflows`.
+`build-client.yml` lama memakai `android-actions/setup-android@v3` dan gagal di
+runner (step setup SDK). Gunakan **`build-client-manual.yml`** yang mengunduh
+SDK langsung, dan build `allinone/` (satu APK).
 
-Untuk mengaktifkan:
+Workflow belum bisa di-push oleh Zentor GitHub App karena izin `workflows`
+belum aktif. Tambahkan manual:
 
-1. Beri izin **Workflows: Read and write** ke Moclaw GitHub App
-   (GitHub → Settings → Applications → Moclaw → Permissions), atau
-2. buat file `.github/workflows/build-client.yml` manual dan salin isi
-   `build-client.yml` di folder ini.
-
-`build-client.yml` menghasilkan artifact APK dari `client/build.sh`.
+1. Buka repo → Add file → Create new file
+2. Path: `.github/workflows/build-allinone.yml`
+3. Salin isi `docs/ci/build-client-manual.yml`
+4. Commit. Actions akan build `allinone/dist/VirtualDroid-AllInOne-v0.6.apk`.
