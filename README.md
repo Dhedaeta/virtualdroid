@@ -1,5 +1,7 @@
 # VirtualDroid Cloud
 
+Repo: https://github.com/Dhedaeta/virtualdroid
+
 HP Android 16 **asli** yang berjalan di server, tampil penuh di HP Anda.
 Bukan guest Activity, bukan UI palsu: container Android 16 (redroid) + stream
 layar lewat ws-scrcpy.
