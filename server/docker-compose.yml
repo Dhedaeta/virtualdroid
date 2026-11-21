@@ -1,0 +1,65 @@
+name: vdroid
+
+services:
+  android:
+    image: ${REDROID_IMAGE:-redroid/redroid:16.0.0_64only-latest}
+    container_name: vdroid-android
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5555:5555"
+    volumes:
+      - /dev/binder:/dev/binder
+      - /dev/hwbinder:/dev/hwbinder
+      - /dev/vndbinder:/dev/vndbinder
+      - ./data:/data
+    command: >
+      androidboot.hardware=redroid
+      androidboot.redroid_width=1080
+      androidboot.redroid_height=1920
+      androidboot.redroid_dpi=420
+      androidboot.redroid_gpu_mode=guest
+      androidboot.use_memfd=true
+    shm_size: "2gb"
+
+  web:
+    build: ./web
+    container_name: vdroid-web
+    restart: unless-stopped
+    depends_on:
+      - android
+    environment:
+      ADB_HOST: android
+    shm_size: "1gb"
+
+  api:
+    build: ./api
+    container_name: vdroid-api
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/opt/vdroid
+    environment:
+      COMPOSE_FILE: /opt/vdroid/docker-compose.yml
+
+  caddy:
+    image: caddy:2.8
+    container_name: vdroid-caddy
+    restart: unless-stopped
+    depends_on:
+      - web
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      VDROID_USER: ${VDROID_USER}
+      VDROID_HASH: ${VDROID_HASH}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

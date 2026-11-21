@@ -1,0 +1,9 @@
+client/build/
+client/dist/
+client/.keys/
+server/data/
+server/.env
+*.apk.idsig
+
+__pycache__/
+*.pyc

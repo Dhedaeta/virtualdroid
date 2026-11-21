@@ -1,0 +1,13 @@
+:80 {
+	basic_auth {
+		{$VDROID_USER} {$VDROID_HASH}
+	}
+
+	handle /api/* {
+		reverse_proxy api:8081
+	}
+
+	handle {
+		reverse_proxy web:8000
+	}
+}
