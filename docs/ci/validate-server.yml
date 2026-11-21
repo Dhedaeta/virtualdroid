@@ -1,0 +1,23 @@
+name: validate-server
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m py_compile server/api/app.py
+          python - <<'PY'
+          import yaml
+          d = yaml.safe_load(open('server/docker-compose.yml'))
+          assert {'android','web','api','caddy'} <= set(d['services'])
+          print('compose ok')
+          PY
+          bash -n server/bootstrap-oracle.sh
+          bash -n server/check-binder.sh

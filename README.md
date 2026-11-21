@@ -2,6 +2,8 @@
 
 Repo: https://github.com/Dhedaeta/virtualdroid
 
+CI: template ada di `docs/ci/` (butuh izin Workflows untuk dipasang).
+
 HP Android 16 **asli** yang berjalan di server, tampil penuh di HP Anda.
 Bukan guest Activity, bukan UI palsu: container Android 16 (redroid) + stream
 layar lewat ws-scrcpy.
