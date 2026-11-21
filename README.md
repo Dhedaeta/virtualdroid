@@ -69,6 +69,10 @@ WebView: ANDROID 16 / MOCK STREAM
 Lihat `docs/CLIENT-TEST.md`. Backend tidak bisa diuji di sandbox ini karena
 tidak ada Docker/binder; lihat `docs/LIMITS.md`.
 
+## Satu APK
+
+`allinone/` berisi satu APK: cloud client + mode lokal (guest engine).
+
 ## Struktur
 
 ```

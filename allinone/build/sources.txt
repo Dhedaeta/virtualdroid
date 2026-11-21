@@ -1,0 +1,14 @@
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/cloud/Api.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/cloud/CloudActivity.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/cloud/MainActivity.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/cloud/Prefs.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/ActivityHijack.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/Core.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/GuestInstrumentation.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/GuestManifest.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/GuestRuntime.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/InstrumentationHook.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/MainActivity.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/StubActivity.java
+/home/user/.workspace/virtualdroid-allinone/app/src/id/vdroid/host/VdApp.java
+/home/user/.workspace/virtualdroid-allinone/build/gen/id/vdroid/cloud/R.java
